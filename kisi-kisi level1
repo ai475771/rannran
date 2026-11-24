@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Kuis Mekanik Instrumen Level 1</title><style>
+:root{--bg:#f4f6f9;--c:#fff;--t:#1b2330;--m:#667085;--p:#1d5fd1;--ok:#157f3d;--no:#c0392b;--b:#d8dde6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161d;--c:#1b212b;--t:#e8ecf2;--m:#98a2b3;--p:#6ea0ff;--ok:#4cc27a;--no:#ff7b6b;--b:#2e3745}}
+:root[data-theme="dark"]{--bg:#12161d;--c:#1b212b;--t:#e8ecf2;--m:#98a2b3;--p:#6ea0ff;--ok:#4cc27a;--no:#ff7b6b;--b:#2e3745}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:16px}h1{font-size:1.3rem;margin:8px 0 2px}.sub{color:var(--m);font-size:.9rem;margin:0 0 12px}
+.bar{height:8px;background:var(--b);border-radius:4px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:var(--p);width:0;transition:width .3s}
+.card{background:var(--c);border:1px solid var(--b);border-radius:12px;padding:14px;margin:12px 0}.sec{color:var(--p);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+.q{font-weight:600;margin:4px 0 10px}label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border:1px solid var(--b);border-radius:8px;margin:6px 0;cursor:pointer}
+label:hover{border-color:var(--p)}label input{margin-top:4px}label.on{border-color:var(--p);background:color-mix(in srgb,var(--p) 10%,transparent)}
+label.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,transparent)}label.bad{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,transparent)}
+.nav{display:flex;gap:8px;justify-content:space-between;margin:14px 0;flex-wrap:wrap}button{font:inherit;padding:10px 18px;border-radius:8px;border:1px solid var(--p);background:var(--p);color:#fff;cursor:pointer}
+button.g{background:transparent;color:var(--p)}button:disabled{opacity:.4;cursor:default}.sc{font-size:2.2rem;font-weight:700;color:var(--p)}.tag{font-size:.8rem;font-weight:600}.tag.ok{color:var(--ok)}.tag.no{color:var(--no)}
+.fl{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.fl button{padding:5px 12px;font-size:.85rem}.warn{color:var(--no);font-size:.85rem}
+</style></head><body><main><h1>Kuis Kisi-Kisi Ujian Mekanik Instrumen Level 1</h1><p class="sub" id="sub"></p><div class="bar"><i id="pb"></i></div><div id="app"></div></main><script>
+const S=[{n:"I. Pilihan Ganda (Pilihan Tunggal)",t:"s",d:[
+"Nilai resistansi termal yang sesuai dengan 0℃ adalah …|0 Ω|50 Ω|100 Ω|10 Ω|C",
+"Tipe Thermal resistor (RTD) yang digunakan di pabrik yaitu …|Pt100|Pt200|Pt300|Pt400|A",
+"Termokopel menggunakan kabel …|Kabel tembaga|Kawat tembaga lunak multi-untai|Kawat kompensasi|Kabel tembaga tunggal|C",
+"Ketika tombol ditekan, kontak normally closed menjadi …|Tertutup|Terputus|Posisi tengah|Posisi samping|B",
+"Kontak normally open adalah kontak yang dalam status … ketika tombol ditekan|Tertutup|Terputus|Posisi tengah|Posisi samping|B",
+"Salah satu alasan termometer Thermal resistor (RTD) menunjukkan tak terbatas adalah …|Sirkuit terputus|Sirkuit pendek|Grounding|Sirkuit panjang|A",
+"Ketinggian pemasangan pressure gauge lokal umumnya sekitar … meter|1.5|1.3|1|0.2|A",
+"Pastikan semua power supply dalam kondisi … sebelum melepas penutup aktuator|Bertegangan|Listrik terputus|Grounding|Arus|B",
+"Ketika pembongkaran kabel aktuator listrik … menandai nomor kabel|Perlu|Tidak perlu|Salah|Terserah|A",
+"Bushing aktuator dan bagian koneksi valve … pelumasan gemuk|Tidak perlu|Perlu|Ada tidaknya sama saja|Terserah|B",
+"Pekerjaan pada ketinggian … body harness|Wajib memakai|Dapat tidak memakai|Pakai atau tidak sama saja|Lihat kondisi|A",
+"Prinsip pemakaian body harness yaitu …|Penggunaan rendah penggantungan tinggi|Penggantungan rendah penggunaan tinggi|Penggantungan sembarangan|Tidak perlu menggantungkan|A",
+"Tegangan pressure transmitter yang digunakan di pabrik adalah …|AC|DC|Bisa DC dan AC|Semua jawaban benar|B",
+"Jika peralatan terkait operasi, … diberitahukan kepada personel operasi selama pekerjaan perbaikan|Tidak perlu|Perlu|Terserah|Salah|B",
+"Sinyal output transmitter tekanan pabrik adalah …|0-20|4-20|0-10|1-10|B",
+"Transmitter tekanan menggunakan … DCS untuk supply listrik|Sistem empat kabel|Sistem tiga kabel|Sistem dua kabel|Sistem satu kabel|C",
+"Ketika sambungan transmitter tekanan positif dan negatif terbalik …|Dapat digunakan dengan normal|Tidak dapat digunakan dengan normal|Tampilan normal|Sistem normal|B",
+"Istilah \"kontak normal tertutup\" mengacu pada kontak yang dalam status … ketika tombol ditekan|Tertutup|Terputus|Posisi tengah|Terserah|A",
+"Stroke mati katup pengatur suplai air harus kurang dari … dari stroke penuh|0.05|0.08|0.1|12%|A",
+"Saat tombol dilepaskan, Anda dapat mengandalkan … untuk mengembalikan kontak ke posisi semula|Elektromagnet|Pulihkan spring|Tegangan|Arus|B",
+"Peralatan kondensat terutama terdiri dari kondensor, pompa kondensat, ekstraktor dan …|Pompa feed water|Pompa penguras|Pompa sirkulasi|Pompa kondensat|C",
+"Menurut hukum Ohm, ukuran resistor linear terkait dengan …|Arus|Tegangan|Potensial|Material|D",
+"Peraturan verifikasi nasional menetapkan resistansi internal generator millivolt harus kurang dari …|100 Euro|15 Euro|5 Euro|10 Euro|C",
+"Dalam sistem satuan internasional, satuan tekanan adalah …|Pa|Ba|Mega Pa|Giga Pa|A",
+"Situasi tubuh manusia: 50~60Hz AC 10mA dan DC … untuk keselamatan tubuh mengalir|10 mA|30 mA|50 mA|70 mA|C",
+"Dalam kontrol termal, arti dari FSSS adalah …|Sistem kendali ESC digital|Sistem pemantauan keamanan tungku|Sistem Gangguan Kritis|Sistem Kontrol Berurutan|B",
+"Dalam kontrol termal, arti ETS adalah …|Sistem Kontrol Listrik Digital|Sistem Pemantauan Keamanan Tungku|Sistem Gangguan Kritis|Sistem Kontrol Berurutan|C",
+"Dalam kontrol termal, arti SCS adalah …|Sistem Kontrol Listrik Digital|Sistem Pemantauan Keamanan Tungku|Sistem Gangguan Kritis|Sistem Kontrol Berurutan|C",
+"Indikator \"tiga tingkat\" pemantauan termal (akurasi instrumen, proteksi investasi, input otomatis) tidak kurang dari …|100%, 99%, 95%|100%, 100%, 97%|95%, 95%, 95%|100%, 100%, 95%|D",
+"Gambar yang digunakan untuk memandu pemasangan kabel adalah …|Diagram alir kontrol|Skematik listrik|Pemasangan diagram pengkabelan|Diagram IDF system/IDF|C",
+"Untuk memahami tingkat otomatisasi unit, Anda harus terlebih dahulu mengenal …|Pemasangan diagram pengkabelan|Skematik listrik|Diagram alir kontrol|Diagram IDF system/IDF|C",
+"Gambar yang menunjukkan skema spesifik deteksi, penyesuaian, dan kontrol parameter termal adalah …|Pemasangan diagram pengkabelan|Skematik listrik|Diagram alir kontrol|Diagram IDF/IDF|B",
+"Peralatan listrik dan instrumen dalam diagram skematik listrik ditunjukkan oleh … yang ditentukan|Simbol|Grafik|Segmen garis|Warna|A",
+"Saat tombol ditekan, kontak yang biasanya tertutup …|Tertutup|Terbuka|Posisi tengah|Posisi atas|B",
+"Sistem kontrol terdistribusi adalah kombinasi organik dari keseluruhan …|Mikroprosesor, pengendali industri, sistem komunikasi data|Mesin kontrol industri, sistem komunikasi data, monitor CRT|Saluran proses, tampilan CRT, mikroprosesor|Semuanya benar|D",
+"Saat tombol dilepas, Anda dapat mengandalkan … untuk mengatur ulang kontak ke posisi semula|Elektromagnet|Pegas kembali|Tegangan|Semua jawaban benar|B",
+"Dua pilar sistem kontrol boiler PLTU modern adalah kontrol terkoordinasi (CCS) dan …|Sistem Akuisisi Data (DAS)|Sistem Kontrol Berurutan (SCS)|Pemantauan Keamanan Tungku (FSSS)|Sistem Kontrol Bypass (BPS)|C",
+"Ketika level air rendah, sistem proteksi beroperasi …|Mengirim sinyal alarm|Buka pintu pasokan air siaga|Matikan boiler|Semua jawaban benar|C",
+"Struktur DCS \"tiga titik dan satu baris\": tiga titik jaringan komputer masing-masing adalah …|Situs controller, stasiun operator, stasiun pengolahan data|Situs controller, stasiun operator, stasiun rekayasa|Stasiun lapangan, stasiun pengolahan data, stasiun rekayasa|Stasiun pengolahan data, ruang operator, stasiun insinyur|B",
+"Kontak yang biasanya tertutup adalah kontak dalam keadaan … saat tombol tidak ditekan|Tertutup|Terputus|Posisi tengah|Semua jawaban benar|A",
+"Untuk aktuator yang ditempatkan di tempat terbuka, pasang …|Perisai panas|Inkubator|Penutup hujan|Semua jawaban benar|C",
+"Ketika tombol ditekan, kontak normal terbuka …|Tertutup|Terbuka|Posisi tengah|Posisi atas|A",
+"Kelengkungan tabung pelindung kabel tidak boleh kurang dari …|120 derajat|90 derajat|60 derajat|30 derajat|B",
+"Kontak yang biasanya terbuka adalah kontak dalam keadaan … ketika tombol ditekan ke bawah|Tertutup|Terbuka|Posisi tengah|Posisi samping|B",
+"Ketinggian instalasi pengukur tekanan lokal umumnya sekitar … meter|1.5|1.3|1|0.2|A",
+"Saat kalibrasi pressure transmitter, langkah pertama sesuai Prosedur Kerja adalah …|Menghubungkan handpump ke transmitter|Mengisi form kalibrasi|Melakukan isolasi proses dan memasang LOTO|Mengatur span transmitter sesuai spesifikasi|C",
+"Tujuan \"as found test\" sebelum kalibrasi adalah …|Mengetahui apakah transmitter perlu diganti|Mengetahui kondisi awal instrumen sebelum penyesuaian|Memastikan zero dan span berada di tengah range|Menghemat waktu proses kalibrasi|B",
+"Dalam SOP perawatan control valve, yang TIDAK termasuk langkah standar adalah …|Melakukan isolasi energi pneumatik|Membersihkan positioner dan housing|Menyetel ulang PID controller|Memeriksa kebocoran pada tubing|C",
+"Sebelum pekerjaan perawatan instrumen, langkah pertama sesuai SOP adalah …|Mengambil alat di workshop|Melakukan penguncian listrik (lockout tagout)|Melapor ke supervisor setelah pekerjaan selesai|Membersihkan area kerja|B",
+"APD yang wajib dipakai saat membuka transmitter bertekanan adalah …|Helm saja|Sarung tangan keselamatan dan kacamata safety|Ear plug|Rompi anti statis|B",
+"Yang termasuk kategori bahaya adalah …|Bahaya ergonomi (stres fisik, stres kejiwaan)|Bahaya mekanis, kimia, biologi|Bahaya psikososial, tingkah laku, kelistrikan|Semua jawaban benar|D",
+"Prinsip K3 berikut, KECUALI …|Setiap pekerjaan bisa dilakukan dengan selamat|Kecelakaan pasti ada penyebabnya|Penyebab kecelakaan harus dicegah/ditiadakan|Kecelakaan adalah takdir/nasib|D",
+"Langkah pencegahan penyakit berikut, KECUALI …|Pemeriksaan kesehatan karyawan|Pendidikan kesehatan|Penjelasan sebelum bekerja|Golongan fisik|D",
+"Langkah awal paling efektif mencegah Penyakit Akibat Kerja (PAK) adalah …|Pemberian suplemen dan vitamin harian|Pengendalian bahaya pada sumbernya (hirarki kontrol)|Pengobatan rutin bagi pekerja yang sakit|Pemindahan lokasi kerja mendadak|B",
+"Peristiwa tidak disengaja, tidak diharapkan dan tidak terkontrol yang dapat merusak peralatan, material, bahkan mencelakai pekerja disebut …|Kerugian kerja|Kerusakan kerja|Fatal kerja|Kecelakaan kerja|D",
+"Tujuan pemeriksaan kesehatan sebelum bekerja (awal) adalah …|Tenaga kerja yang diterima berkondisi kesehatan lebih baik|Tidak memiliki penyakit menular|Acuan dasar riwayat kesehatan selama bekerja|Semua jawaban benar|D",
+"Pemeriksaan kesehatan tenaga kerja meliputi …|Awal dan berkala|Berkala dan berjangka|Awal, berkala dan khusus|Awal, berjangka dan khusus|C",
+"Penyebab langsung (immediate cause) kecelakaan adalah …|Tindakan dan kondisi tidak aman|Faktor individu|Faktor pekerjaan|Faktor pekerjaan dan faktor individu|A",
+"Metode pemadaman kebakaran meliputi …|Cooling, Smoothing, Breaking Chain Reaction, Starvation|Cooling, Smothering, Breaking Chain Reaction|Cooling, Smothering, Starvation, Breaking Chain Reaction|Breaking News Reaction, Cooling, Starvation, Smothering|C",
+"Alasan perusahaan harus mengelola keselamatan kerja:|Mencegah cedera pada pekerja|Meningkatkan keuntungan dan menjaga reputasi|Memenuhi peraturan perundangan|Semua jawaban benar|D",
+"Tujuan utama keselamatan kerja adalah …|Mengurangi tingkat kecelakaan|Mengurangi beban pekerja|Menambah pendapatan pekerja|Menyeimbangkan beban pekerja|A",
+"Kondisi saat sumber bahaya telah dikendalikan ke tingkat memadai, lawan dari bahaya (danger), adalah …|Keamanan|Alat pelindung diri|Kesehatan|Kepedulian|A",
+"Warna merah dalam simbol keselamatan kerja bermakna …|Perintah wajib ditaati|Peringatan dan informasi waspada|Perintah larangan, berhenti|Keadaan aman, dapat melintas|C",
+"Sebelum mogok kerja, pemberitahuan dilakukan selambat-lambatnya …|4 hari|5 hari|6 hari|7 hari|D",
+"Yang termasuk Hak karyawan, KECUALI …|Imbal jasa|Waktu istirahat dan cuti|Mengundurkan diri|Membayar upah|D",
+"Pelanggaran tingkat Surat Peringatan Pertama dan Terakhir (SPPT) adalah …|Mangkir 2 hari|Mengemudikan unit milik perusahaan tanpa SIM dan SIMPER|Tidur selama jam kerja|Mangkir 5 hari berturut-turut|B",
+"Hak Perusahaan berikut, KECUALI …|Memberikan perintah kerja|Memerintahkan kerja lembur|Mutasi dan demosi|Menyampaikan keluh kesah dan saran kepada karyawan|D",
+"Karyawan yang End Contract berhak mendapatkan …|Surat Perintah Lembur|SKTB dan SPK|ST dan SPPT|Surat Skorsing|B"
+]},{n:"II. Pilihan Ganda Kompleks (Lebih dari Satu Jawaban)",t:"m",d:[
+"Komponen utama untuk pengukuran suhu di area pembangkit listrik:|Thermocouple|Thermal resistor (RTD)|Tipe K|Tipe J|AB",
+"Thermocouple berdasarkan cara pemasangan dibedakan menjadi 2 macam yaitu …|Ditancapkan|Dipermukaan|Sirkuit terbuka|Sirkuit pendek|AB",
+"Komposisi utama magnetic level gauge adalah …|Perangkat apung|Posisi tengah|Indikator|Semua kabel|AC",
+"Satu paket instrumentasi pengukur suhu lengkap dilengkapi 2 komponen yaitu …|Tidak ada indikasi dari instrumentasi|Sensor suhu|Tekanan|Alat indikator|BD",
+"Pipa pengukur uap, air, minyak sebelum transmitter harus dipasang …; selain triangle valve pada pengukuran differensial tekanan uap dan air, umumnya menggunakan …|Valve sekunder|Needle valve|Diameter|Sifat|AB",
+"Menurut jenis arus kontrol kumparan, relai dibagi menjadi dua kategori …|AC|DV|RTD|DC|AD",
+"Pressure gauge adalah perbedaan … dengan …|Tekanan absolut|Tekanan atmosfer|Elektromagnet|Switching|AB",
+"Pembukaan sampai penutupan sepenuhnya aktuator merupakan pengaturan … sampai … sepenuhnya dari mekanisme|Zirkonia oksigen meter|Pembukaan|Penutupan|Thermal meter oksigen magnetik|BC",
+"Kisaran suhu pengukuran termokopel terkait dengan … material dan … kabel termokopel|Sifat|Diameter|Benar-benar terbenam|Terbenam dalam ukuran berapa pun|AB",
+"Sakelar travel menggunakan metode … dalam mengukur … untuk mendapatkan sinyal perjalanan|Ditandai|Memastikan|Kontak langsung|Jumlah perpindahan mekanis|CD",
+"Komponen untuk mengukur tekanan:|Manometer|Bourdon tube|Thermocouple|Strain gauge|AB",
+"Sensor untuk mengukur suhu range tinggi (>1000°C):|Thermocouple|RTD|Thermistor|Bimetallic temperature sensor|AD",
+"Alat ukur aliran fluida dengan prinsip perubahan tekanan:|Orifice plate|Turbine flowmeter|Venturi meter|Magnetic flowmeter|AC",
+"Komponen pada sistem pengendalian suhu:|Sensor suhu (thermocouple, RTD)|Transmitter suhu|Actuator (katup atau pemanas)|Flowmeter|ABC",
+"Alat untuk mengukur aliran dalam sistem pipa:|Flow switch|Turbine flowmeter|Pressure gauge|Ultrasonic flowmeter|BD",
+"Sensor yang dapat mengukur level cairan:|Float level sensor|Ultrasonic level sensor|Capacitive level sensor|pH sensor|ABC",
+"Jenis sensor dalam sistem instrumentasi:|Thermocouple|Transduser|Mikrokontroler|Strain gauge|ABD",
+"Alat untuk mengukur tekanan gas:|Manometer air raksa|Bourdon tube|Manometer digital|Manometer tabung U|ABD",
+"Prinsip kerja termokopel didasarkan pada fenomena:|Efek termolistrik|Efek Hall|Perubahan resistansi|Pirometri|AB",
+"Alat untuk mengukur kecepatan aliran udara:|Flow meter|Pitot tube|Differential pressure transmitter|Orifice plate|BC",
+"Komponen utama kalibrasi instrumen:|Sumber sinyal|Alat pengukur|Sistem kontrol otomatis|Standar gauge|ABC",
+"Kesalahan pengukuran sistematik (mis. faktor lingkungan) disebut:|Sistematik error|Acak error|Drift|Kesalahan pengukuran|AC",
+"Transduser yang mengubah sinyal listrik menjadi sinyal mekanik disebut:|Sensor|Aktuator|Transduser pasif|Transduser aktif|BD",
+"Perangkat untuk mengukur tekanan gas:|Transmitter tekanan|Bourdon tube|Manometer|Pressure switch|ABC",
+"Pengukuran lebih rendah dari nilai sebenarnya mengindikasikan:|Sistematik error|Acak error|Kesalahan pengukuran|Zero drift|AD",
+"Pengukuran suhu thermocouple dipengaruhi oleh:|Tipe material kawat|Diferensial suhu antara ujung pengukur|Kondisi suhu referensi|Kualitas sinyal listrik|ABC",
+"Instrumen untuk mengukur kelembapan relatif udara:|Hygrometer|Thermocouple|Barometer|Psychrometer|AD",
+"Sensor untuk mengukur getaran:|Accelerometer|Thermocouple|Strain gauge|Pressure transmitter|AC",
+"Fungsi utama kontrol feedback:|Mengurangi sinyal error|Mempercepat respons sistem|Menjaga kestabilan parameter pengukuran|Mengurangi noise|AC",
+"Alat untuk mengukur pH larutan:|Thermometer|pH meter|Spectrophotometer|Strain gauge|BC",
+"Teknologi pengukur level cairan dalam tangki:|Ultrasonic level sensor|Capacitive sensor|Float level sensor|Differential pressure sensor|ACD",
+"Sensor untuk mendeteksi gas berbahaya secara kontinu:|Oxygen analyzer|Gas chromatograph|Photoionization detector|Carbon dioxide analyzer|ACD",
+"Prinsip kerja strain gauge untuk mengukur regangan:|Perubahan resistansi|Perubahan suhu|Perubahan panjang material|Perubahan tekanan|AC",
+"APAR di suatu lokasi hanya efektif untuk benda yang baru terbakar karena:|Jumlah APAR terbatas|Mampu memadamkan kebakaran|Jangka semprot yang lama|Jarak semprot yang terbatas|AD",
+"Contoh pemadaman api dengan cara Starvation:|Menutup drum yang terbakar|Memadamkan api dengan air|Menghentikan supply bahan bakar|Memutuskan aliran bahan bakar menuju tempat kebakaran|CD",
+"Yang termasuk kondisi tidak aman adalah, KECUALI:|Perkakas atau peralatan rusak|Mengoperasikan kendaraan dengan ugal-ugalan|Bersenda gurau sambil bekerja|Tempat kerja penuh ceceran oli|BC",
+"Syarat-syarat helm untuk APD:|Tahan benturan|Meredam kejutan|Tidak mudah terbakar|Mudah disesuaikan|ABCD",
+"Fungsi utama safety shoes di area kerja industri:|Melindungi kaki dari kejatuhan benda berat atau tajam|Mencegah terpeleset|Melindungi dari sengatan listrik|Menjaga kebersihan pakaian kerja|ABC",
+"Yang bertanggung jawab terhadap K3 di tempat kerja:|Manajemen|Pengawas|Petugas K3|Investor|ABC",
+"Yang merupakan prinsip K3:|Langkah keselamatan seadanya|Setiap pekerjaan bisa dilakukan dengan selamat|Kecelakaan pasti ada penyebabnya|Penyebab kecelakaan harus dicegah/ditiadakan|BCD",
+"Sanksi yang diberlakukan di Perusahaan:|Surat Teguran|Surat Peringatan I|Surat Peringatan II|Surat Peringatan III|BCD",
+"Pelanggaran yang dapat diberi Surat Peringatan I:|Mangkir kerja 2 (dua) hari|Makan selama jam kerja tanpa seizin atasan|Menolak mutasi tanpa alasan yang dapat diterima|Berpakaian tidak sopan di tempat umum|ABD",
+"Hak karyawan yang diatur dalam aturan Perusahaan:|Berhak mendapat imbal jasa berupa upah atau lainnya atas pekerjaannya|Berhak mendapat waktu istirahat dan cuti sesuai PKB/Peraturan Perusahaan|Masuk bekerja tidak mengikuti pengaturan kerja perusahaan|Berhak mendapat bantuan Perusahaan ketika mendapat permasalahan/ancaman|ABD",
+"Kewajiban karyawan yang diatur dalam aturan Perusahaan:|Wajib tunduk dan mengikatkan diri pada PKB/Peraturan Perusahaan|Wajib menaati instruksi, perintah, dan peraturan Perusahaan, lisan maupun tertulis|Wajib hadir di waktu dan lokasi kerja yang ditetapkan Perusahaan|Tidak wajib menggunakan alat pelindung diri selama bekerja|ABC",
+"Pelanggaran yang dapat diberi Surat Peringatan Pertama dan Terakhir (SPPT):|Mangkir kerja 3 (tiga) hari|Mangkir kerja 4 (empat) hari|Mangkir kerja 1 (satu) hari|Mangkir kerja 2 (dua) hari|AB"
+]},{n:"III. Benar - Salah",t:"b",d:[
+"Pengukuran suhu dilakukan dengan termometer yang bekerja berdasarkan perubahan resistansi logam terhadap suhu.|A",
+"Transduser digunakan untuk mengubah satu bentuk energi menjadi bentuk energi lainnya.|A",
+"Pada sistem pengukuran tekanan, manometer diferensial hanya digunakan untuk mengukur perbedaan tekanan antara dua titik.|A",
+"Temperatur dapat diukur dengan thermocouple yang bekerja berdasarkan perubahan tegangan seiring perubahan suhu.|A",
+"Indikator tekanan pada sistem pneumatik dan hidraulik selalu menggunakan sistem mekanik seperti pegas.|B",
+"Sensor strain gage mengukur perubahan gaya atau tekanan dengan memanfaatkan perubahan panjang pada bahan yang terdeformasi.|A",
+"Sistem kontrol analog lebih presisi dibandingkan sistem kontrol digital.|B",
+"Pada pipa sumber udara pneumatic actuator, umumnya harus dipasang regulator dan filter.|A",
+"Output pemanasan listrik konsentrasi oksigen oleh oksimeter zirkonia hanya terkait dengan kandungan oksigen dalam gas di kedua sisi zirkonia.|B",
+"Sistem pengukuran level dengan sensor ultrasonik bekerja berdasarkan prinsip pantulan gelombang suara.|A",
+"Sistem kontrol loop tertutup (closed loop) tidak membutuhkan pengukuran feedback.|B",
+"Sensor pH digunakan untuk mengukur konsentrasi ion hidrogen dalam larutan.|A",
+"Sirkuit pembacaan sinyal sensor pada instrumen digital dapat menggunakan konverter analog-ke-digital (ADC).|A",
+"Pada kontrol suhu, termostat bekerja dengan mengatur aliran arus listrik berdasarkan suhu yang terdeteksi.|A",
+"Pemrograman PLC tidak memerlukan pengetahuan dasar tentang listrik dan elektronik.|B",
+"Sinyal analog dapat diproses dalam bentuk digital untuk aplikasi kontrol otomatisasi.|A",
+"Flowmeter jenis turbine mengukur aliran berdasarkan putaran rotor yang dipengaruhi kecepatan aliran.|A",
+"Sensor suhu RTD lebih tepat untuk pengukuran suhu rendah daripada thermocouple.|B",
+"Semua alat pengukur tekanan menggunakan bourdon tube sebagai mekanisme utama.|B",
+"Transmitter tekanan mengubah sinyal tekanan menjadi sinyal analog atau digital yang dapat diterima sistem kontrol.|A",
+"HMI (Human Machine Interface) memungkinkan interaksi antara operator dengan sistem kontrol otomatis.|A",
+"Dalam proses kontrol industri, PID hanya digunakan untuk kontrol suhu.|B",
+"Katup solenoid beroperasi dengan menggerakkan plunger menggunakan medan magnet.|A",
+"Prinsip kerja venturi meter didasarkan pada hukum Bernoulli yang mengaitkan tekanan dan kecepatan aliran.|A",
+"Kalibrasi alat ukur bertujuan memastikan akurasi pengukuran sesuai standar yang ditetapkan.|A",
+"Simbol K3 berwarna kuning menandakan peringatan kewaspadaan.|A",
+"Alternatif terakhir dalam hirarki pengendalian bahaya adalah Alat Pelindung Diri.|A",
+"Simbol K3 berwarna merah menandakan larangan atau tanda bahaya kebakaran.|A",
+"Eliminasi merupakan langkah pertama dan paling efektif dalam hirarki pengendalian risiko K3.|A",
+"Tujuan rekomendasi tindakan perbaikan setelah kecelakaan adalah agar kecelakaan tersebut tidak terulang kembali.|A",
+"Warna biru yang digunakan dalam sign menandakan \"Kewajiban\".|A",
+"Pekerja yang menyelesaikan pekerjaan 5-10 menit tidak perlu menggunakan APD.|B",
+"Peraturan Perusahaan adalah peraturan tertulis yang memuat pedoman tentang hak dan kewajiban Perusahaan dan Karyawan.|A",
+"Mangkir 2 hari dapat dikenakan sanksi Surat Peringatan III.|B",
+"Kepanjangan SPPT adalah Surat Peringatan Pertama dan Terakhir.|A",
+"Surat Keterangan Sakit (SKS) wajib dikumpulkan paling lambat 1 hari.|B",
+"Kewajiban Perusahaan adalah memberikan perintah kerja kepada Karyawan.|B"
+]}];
+const P=10,Q=[];S.forEach(s=>s.d.forEach(r=>{const a=r.split("|"),k=a.pop(),q=a.shift();Q.push({s:s.n,t:s.t,q,o:s.t=="b"?["Benar","Salah"]:a,k})}));
+const ans=Q.map(()=>[]);let pg=0,done=false,flt="all";const $=id=>document.getElementById(id),L="ABCDE",pages=Math.ceil(Q.length/P);
+const ok=i=>[...ans[i]].sort().join("")===Q[i].k.split("").sort().join("");
+function upd(){const n=ans.filter(a=>a.length).length;$("pb").style.width=(done?100:n/Q.length*100)+"%";$("sub").textContent=done?"Hasil kuis":`${Q.length} soal · terjawab ${n} · halaman ${pg+1}/${pages}`}
+function opts(i,rev){const q=Q[i],m=q.t=="m";return q.o.map((o,j)=>{const c=L[j],on=ans[i].includes(c),cor=q.k.includes(c);let cl=on?"on":"";if(rev)cl=cor?"ok":on?"bad":"";return `<label class="${cl}"><input type="${m?"checkbox":"radio"}" name="q${i}" ${on?"checked":""} ${rev?"disabled":""} onchange="pick(${i},'${c}',this.checked)"><span><b>${c}.</b> ${o}</span></label>`}).join("")}
+function pick(i,c,v){const q=Q[i];ans[i]=q.t=="m"?(v?[...ans[i],c]:ans[i].filter(x=>x!=c)):[c];show()}
+function show(){upd();let h="";const a=pg*P,b=Math.min(a+P,Q.length);for(let i=a;i<b;i++){const q=Q[i];h+=`<div class="card"><div class="sec">${q.s}</div><div class="q">${i+1}. ${q.q}</div>${q.t=="m"?'<div class="sub">Pilih semua jawaban yang benar.</div>':""}${opts(i)}</div>`}
+const last=pg==pages-1;h+=`<div class="nav"><button class="g" ${pg?"":"disabled"} onclick="go(-1)">← Sebelumnya</button>${last?'<button onclick="fin()">Kirim Jawaban</button>':'<button onclick="go(1)">Berikutnya →</button>'}</div>`;if(last){const u=ans.filter(a=>!a.length).length;if(u)h+=`<div class="warn">${u} soal belum dijawab.</div>`}$("app").innerHTML=h}
+function go(d){pg+=d;show();scrollTo(0,0)}
+function fin(){const u=ans.filter(a=>!a.length).length;if(u&&!confirm(u+" soal belum dijawab. Tetap kirim?"))return;done=true;res();scrollTo(0,0)}
+function res(){upd();const n=Q.filter((_,i)=>ok(i)).length,pct=Math.round(n/Q.length*100);let h=`<div class="card"><div class="sc">${n} / ${Q.length} (${pct}%)</div><div>Benar: ${n} · Salah/kosong: ${Q.length-n}</div><div class="fl"><button class="${flt=="all"?"":"g"}" onclick="f('all')">Semua</button><button class="${flt=="no"?"":"g"}" onclick="f('no')">Salah</button><button class="${flt=="ok"?"":"g"}" onclick="f('ok')">Benar</button><button class="g" onclick="rs()">Ulangi Kuis</button></div></div>`;
+Q.forEach((q,i)=>{const r=ok(i);if(flt=="ok"&&!r||flt=="no"&&r)return;h+=`<div class="card"><span class="tag ${r?"ok":"no"}">${r?"✓ Benar":ans[i].length?"✗ Salah":"✗ Tidak dijawab"}</span><div class="q">${i+1}. ${q.q}</div>${opts(i,1)}<div class="sub">Kunci jawaban: <b>${q.k.split("").join(", ")}</b> · Jawabanmu: <b>${ans[i].sort().join(", ")||"-"}</b></div></div>`});$("app").innerHTML=h}
+function f(x){flt=x;res()}function rs(){ans.forEach((_,i)=>ans[i]=[]);pg=0;done=false;flt="all";show();scrollTo(0,0)}
+show();
+</script></body></html>
